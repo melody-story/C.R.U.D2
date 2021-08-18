@@ -1,5 +1,4 @@
 import movies
-from django.http.response import JsonResponse
 from django.shortcuts import render
 import json
 
@@ -49,7 +48,7 @@ class ActorsView(View):
             last_name     = data["last_name"], 
             date_of_birth = data["birth_date"] 
         )
-        
+
         movie = Movies.objects.get(title=data['title'])
         
         # ----------------------
