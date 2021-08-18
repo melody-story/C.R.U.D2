@@ -45,11 +45,22 @@ class ActorsView(View):
     def post(self,request):
         data = json.loads(request.body)
         actor = Actors.objects.create(
-
-            first_name = data["first_name"], 
-            last_name = data["last_name"], 
+            first_name    = data["first_name"], 
+            last_name     = data["last_name"], 
             date_of_birth = data["birth_date"] 
         )
+        
+        movie = Movies.objects.get(title=data['title'])
+        
+        # ----------------------
+        # 중간 테이블 있는 경우 중간 테이블에 데이터 값 넣기
+        #  Movie_actor.objects.create(
+        #     actor = actor,
+        #     movie = movie
+        # )
+        # -----------------------
+        
+        actor.Movies.add(movie)
         return JsonResponse({"MESSAGE" : "CREATE" }, status=200)
 
 
