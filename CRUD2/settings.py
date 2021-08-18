@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'owners.apps.OwnersConfig',
-#    'movies',
+    'movies.apps.MoviesConfig',
     'corsheaders'
 ]
 
