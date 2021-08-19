@@ -1,4 +1,4 @@
-import movies
+#import movies
 from django.shortcuts import render
 import json
 
