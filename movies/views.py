@@ -64,7 +64,6 @@ class ActorsView(View):
 
 
 
-
 class MoviesView(View):
     
     # 영화의 제목, 상영시간, 출연한 배우 목록 (이름만)
